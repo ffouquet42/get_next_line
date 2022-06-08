@@ -6,9 +6,11 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 14:54:19 by fllanet           #+#    #+#             */
-/*   Updated: 2022/06/05 14:58:01 by fllanet          ###   ########.fr       */
+/*   Updated: 2022/06/08 09:36:54 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
