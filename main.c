@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 09:29:01 by fllanet           #+#    #+#             */
-/*   Updated: 2022/10/12 09:35:31 by fllanet          ###   ########.fr       */
+/*   Updated: 2022/10/12 16:08:35 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int	main(int argc, char **argv)
 	while (1)
 	{
 		line = get_next_line(fd);
-		printf("%s", line);
-		free(line);
 		if (line == NULL)
 			break ;
+		printf("%s", line);
+		free(line);
 	}
 	return (0);
 }
