@@ -1,8 +1,0 @@
-Ecrire une fonction
-qui retourne une 
-ligne lue
-
-depuis un 
-
-
-descripteur de fichier

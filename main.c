@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 09:29:01 by fllanet           #+#    #+#             */
-/*   Updated: 2022/10/13 14:44:43 by fllanet          ###   ########.fr       */
+/*   Updated: 2022/10/13 16:20:19 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	int		fd;
 	char	*line;
 
-	fd = open("texte.txt", O_RDONLY);
+	fd = open("file_1.txt", O_RDONLY);
 	if (fd == -1)
 		return (-1);
 	while (1)
