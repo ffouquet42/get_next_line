@@ -6,9 +6,11 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 14:54:19 by fllanet           #+#    #+#             */
-/*   Updated: 2022/10/12 17:56:09 by fllanet          ###   ########.fr       */
+/*   Updated: 2022/10/13 10:51:35 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// check leaks
 
 #include "get_next_line.h"
 
@@ -22,19 +24,16 @@ char	*get_next_line(int fd)
 	if (BUFFER_SIZE <= 0 || fd < 0 || fd > FOPEN_MAX)
 		return (NULL);
 	read_count = BUFFER_SIZE;
-	stash = NULL;
-	stash = ft_strjoin(stash, buff); // -> strdup de buff ?
-	while (read_count == BUFFER_SIZE && search_newline(buff) != 1) // !search_newline()
+	stash = ft_strdup(buff);
+	while (read_count == BUFFER_SIZE && !search_newline(buff))
 	{
 		read_count = read(fd, buff, BUFFER_SIZE);
-		// ?
-		if (read_count == -1) 
+		if (read_count == -1)
 			return (free(stash), NULL);
 		buff[read_count] = '\0';
 		if (read_count == 0 && !stash[0])
 			return (free(stash), NULL);
 		stash = ft_strjoin(stash, buff);
-		// ?
 	}
 	line = ft_clean(stash, buff);
 	return(free(stash), line);
@@ -44,11 +43,9 @@ char	*ft_strjoin(char *stash, char *buff)
 {
 	int		i;
 	int		j;
-	int		len; // -> size_t ?
+	int		len;
 	char	*dest;
 
-	if (!stash)
-		return (ft_strdup(buff));
 	len = ft_strlen(stash) + ft_strlen(buff);
 	dest = malloc(sizeof(char) * (len + 1));
 	if (!dest)
@@ -66,7 +63,7 @@ char	*ft_strjoin(char *stash, char *buff)
 		j++;
 	}
 	dest[i + j] = '\0';
-	free(stash);
+	free(stash); // ? | free ancienne stash ?
 	return (dest);
 }
 
@@ -77,7 +74,7 @@ char	*ft_strdup(char *buff)
 
 	dest = malloc(sizeof(char) * (ft_strlen(buff) + 1));
 	if (!dest)
-		return (0); // ? | -> NULL ?
+		return (NULL);
 	i = 0;
 	while (buff[i])
 	{
@@ -93,8 +90,6 @@ int	ft_strlen(char *str)
 	int	i;
 
 	i = 0;
-//	if (!str)
-//		return (0);
 	while (str[i])
 		i++;
 	return (i);
@@ -104,8 +99,6 @@ int	search_newline(const char *buff)
 {
 	int	i;
 
-//	if (!buff)
-//		return (0);
 	i = 0;
 	while (buff[i])
 	{
@@ -116,30 +109,30 @@ int	search_newline(const char *buff)
 	return (0);
 }
 
-char	*ft_clean(char *stash, char *buf)
+char	*ft_clean(char *stash, char *buff)
 {
 	int		i;
 	int		j;
 	char	*line;
 
 	i = 0;
-	while (stash[i] != '\n' && stash[i])
+	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (stash[i] == '\n')
 		i++;
-	j = 0;
 	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 		return (NULL);
-	while (j < i && stash[j])
+	j = 0;
+	while (stash[j] && j < i)
 	{
 		line[j] = stash[j];
 		j++;
 	}
 	line[j] = '\0';
 	j = 0;
-	while (stash[i] && buf[j])
-		buf[j++] = stash[i++];
-	buf[j] = '\0';
-	return (line);
+	while (buff[j] && stash[i])
+		buff[j++] = stash[i++];
+	buff[j] = '\0';
+	return (line); // comment le contenue de buff est conserver ?
 }
