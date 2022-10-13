@@ -6,7 +6,7 @@
 /*   By: fllanet <fllanet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 14:53:20 by fllanet           #+#    #+#             */
-/*   Updated: 2022/10/12 18:00:34 by fllanet          ###   ########.fr       */
+/*   Updated: 2022/10/13 14:33:02 by fllanet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 # include <stdio.h>
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *stash, char *buff);
-char	*ft_strdup(char *buff);
+char	*merge_stash_and_buff(char *stash, char *buff);
+char	*buff_to_stash(char *buff);
 int		ft_strlen(char *str);
 int		search_newline(const char *buff);
-char	*ft_clean(char *stash, char *buf);
+char	*stash_to_line(char *stash, char *buf);
 
 #endif
