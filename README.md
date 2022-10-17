@@ -5,6 +5,7 @@
 ## Grade - ?/125
 
 Mandatory Part : ?/100
+
 Bonus Part : ?/25
 
 ## Description
@@ -36,7 +37,7 @@ You can create a text file .txt and fill it in the main. get_next_line will read
 
 The program also works by reading several fd at the same time.
 
-You can initialize BUFFER_SIZE to a value greater than or equal to 0.
+You can initialize `BUFFER_SIZE` to a value greater than or equal to 0.
 
 ## Testing
 
