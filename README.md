@@ -20,14 +20,14 @@ This project contains the necessary get_next_line code to open and read followin
 
 * Mandatory Part
 
-`get_next_line.h`
-`get_next_line.c`
+`get_next_line.h`  
+`get_next_line.c`  
 `get_next_line_utils.c`
 
 * Bonus Part
 
-`get_next_line_bonus.h`
-`get_next_line_bonus.c`
+`get_next_line_bonus.h`  
+`get_next_line_bonus.c`  
 `get_next_line_utils_bonus.c`
 
 ## How to use it
