@@ -2,11 +2,10 @@
 
 *Version: 10*
 
-## Grade - ?/125
+## Grade - 125/100
 
-Mandatory Part : ?/100
-
-Bonus Part : ?/25
+Mandatory Part : 100/100  
+Bonus Part : 25/25
 
 ## Description
 
@@ -58,6 +57,10 @@ run `cc -g -D BUFFER_SIZE=5 get_next_line.c get_next_line_utils.c main.c && valg
 
 run `cc -g -D BUFFER_SIZE=5 get_next_line_bonus.c get_next_line_utils_bonus.c main_bonus.c && valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out && cat valgrind.rpt && rm valgr*`.
 
+This project has also been tested with a tester from github. All the tests carried out return OK / MOK.
+
+* [gnlTester](https://github.com/Tripouille/gnlTester) from Tripouille  
+ 
 ## Credit
 
 Project made by [ffouquet42](https://github.com/ffouquet42)
