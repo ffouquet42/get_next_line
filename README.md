@@ -32,11 +32,11 @@ This project contains the necessary get_next_line code to open and read followin
 
 ## How to use it
 
-You can create a text file .txt and fill it in the main. get_next_line will read the entire file.
+You can create a text file .txt and enter it in the main. get_next_line will read the entire file.
 
 The program (Bonus Part) also works by reading several fd at the same time.
 
-You can initialize `BUFFER_SIZE` to a value greater than or equal to 0.
+You can initialize `BUFFER_SIZE` to a value greater than or equal to 0 with `-D BUFFER_SIZE=n` when compiling.
 
 ## Testing
 
@@ -47,7 +47,8 @@ All tests return : `All heap blocks were freed -- no leaks are possible`.
 
 This project contains a custom `main.c` and `main_bonus.c` containing several tests for each part.
 
-Tests can be run with the `file_1.txt`, `file_2.txt`, `file_3.txt`, `file_4.txt` and `file_5.txt`.
+Tests can be run with the `file_1.txt`, `file_2.txt`, `file_3.txt`, `file_4.txt` and `file_5.txt`.  
+Or you can use whatever file you want using `argc argv` and using the second main in `main.c`.
 
 * Mandatory Part
 
