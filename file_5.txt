@@ -1,3 +1,4 @@
-salut
-sal
-s
+hello
+hel
+h
+
