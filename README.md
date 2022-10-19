@@ -32,7 +32,7 @@ This project contains the necessary get_next_line code to open and read followin
 
 ## How to use it
 
-You can create a text file .txt and enter it in the main. get_next_line will read the entire file.
+You can create a file and enter it in the main. get_next_line will read the entire file.
 
 The program (Bonus Part) also works by reading several fd at the same time.
 
